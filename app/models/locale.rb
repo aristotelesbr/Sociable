@@ -1,5 +1,9 @@
 class Locale < ActiveRecord::Base
   belongs_to :category
+  # Validates locale
+  validates :title, :description, :state, :street,
+    :number, :city, :category_id, presence: true
+    
    # Geocoder
   geocoded_by :location do |obj, results|
     if geo = results.first
