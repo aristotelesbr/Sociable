@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @locale.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @locale.description %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @locale.state %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @locale.street %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @locale.number %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @locale.zip %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @locale.category %>
+</p>
+
+<%= link_to 'Edit', edit_locale_path(@locale) %> |
+<%= link_to 'Back', locales_path %>
