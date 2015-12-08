@@ -5,6 +5,22 @@
 
 <h1>Listing Locales</h1>
 
+<div id="map-container">
+  <div id="map-canvas">
+    <div id="map"></div>
+  </div>
+</div>    
+
+<script type="text/javascript">
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+});
+</script>
+<br>
+
 <table>
   <thead>
     <tr>
@@ -41,17 +57,3 @@
 
 <%= link_to 'New Locale', new_locale_path %>
 
-
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
-</div>
-
-<script type="text/javascript">
-handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers(<%=raw @hash.to_json %>);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-});
-</script>
-<br>

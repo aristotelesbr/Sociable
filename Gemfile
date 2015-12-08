@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'geocoder', '~> 1.2', '>= 1.2.12'
 gem 'gmaps4rails', '~> 2.1', '>= 2.1.2'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
