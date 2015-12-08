@@ -6,6 +6,11 @@ class LocalesController < ApplicationController
   def index
     @locales = Locale.all
     @categories = Category.all
+    @hash = Gmaps4rails.build_markers(@locales) do |locale, marker|
+      marker.lat locale.latitude
+      marker.lng locale.longitude
+      marker.infowindow locale.title
+    end
   end
 
   # GET /locales/1
