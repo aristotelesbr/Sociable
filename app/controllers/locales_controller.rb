@@ -5,6 +5,7 @@ class LocalesController < ApplicationController
   # GET /locales.json
   def index
     @locales = Locale.all
+    @categories = Category.all
   end
 
   # GET /locales/1
@@ -69,6 +70,7 @@ class LocalesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def locale_params
-      params.require(:locale).permit(:title, :description, :state, :street, :number, :zip, :category_id)
+      params.require(:locale).permit(:title, :description,
+        :state, :city, :latitude, :longitude, :street, :number, :zip, :category_id)
     end
 end
