@@ -10,8 +10,20 @@ class LocalesController < ApplicationController
       marker.lat locale.latitude
       marker.lng locale.longitude
       marker.infowindow locale.title
+      if locale.category_id == 1
+        marker.picture({
+          url: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|0000FF|000000",
+          width:  32,
+          height: 32})
+      elsif locale.category_id == 2
+        marker.picture({
+          url: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|00CC89|000000",
+          width:  32,
+          height: 32})        
+      end
     end
-  end
+  end    
+
 
   # GET /locales/1
   # GET /locales/1.json
