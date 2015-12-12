@@ -17,3 +17,164 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html {
+ 	background: #F4F4F4;
+ }
+
+ body {
+ 	font: normal 18px/1.5 "Helvetica Neue", sans-serif;
+ 	margin: 0 auto;
+ 	width: 900px;
+ 	background: #F4F4F4;
+ }
+
+ a {
+ 	color: #ff9c00;
+ }
+
+ a img {
+ 	border: none;
+ }
+
+ .logo {
+ 	text-decoration: none;
+ }
+
+ .page {
+ 	padding: 50px 0;
+ }
+
+ header {
+ 	position: relative;
+ 	margin-bottom: 20px;
+ }
+
+ header h1 {
+ 	display: inline-block;
+ 	line-height: 60px;
+ 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+ 	font-size: 36px;
+ 	font-weight: 100;
+ 	border-left: 1px solid #ccc;
+ 	margin: 0;
+ 	margin-left: 15px;
+ 	padding-left: 15px;
+ }
+
+ .button {
+ 	-webkit-transition: background .2s ease-in;
+ 	background: #ff9c00;
+ 	border: none;
+ 	border-radius: 5px;
+ 	color: #fff;
+ 	cursor: pointer;
+ 	font-size: 24px;
+ 	padding: 10px 20px;
+ 	text-transform: lowercase;
+ }
+
+ nav {
+ 	position: absolute;
+ 	right: 0;
+ 	top: 20px;
+ }
+
+ nav input {
+ 	font-size: 18px;
+ 	background: none;
+ 	border: none;
+ 	text-decoration: underline;
+ 	cursor: pointer;
+ }
+
+ nav li {
+ 	float: left;
+ 	list-style: none;
+ 	margin-left: 15px;
+ }
+
+ nav a {
+ 	color: #666;
+ }
+
+ ul {
+ 	list-style: none;
+ 	margin: 0;
+ 	padding: 0;
+ }
+
+ .actions {
+ 	-webkit-transition: opacity .2s ease-in;
+ 	font-size: 14px;
+ 	opacity: 0;
+ }
+
+ .actions a {
+ 	color: #cc4b00;
+ }
+
+ li:hover .actions {
+ 	opacity: 1;
+ }
+
+
+ .message {
+ 	border-radius: 5px;
+ 	color: #fff;
+ 	font-size: 24px;
+ 	padding: 10px 20px;
+ }
+
+ .notice {
+ 	background: #90CC26;
+ }
+
+ .alert {
+ 	background: #BE3605;
+ }
+
+ label {
+ 	display: block;
+ }
+
+ .error-messages li {
+ 	list-style: disc;
+ 	margin-left: 25px;
+ }
+
+ .error-messages p {
+ 	font-size: 24px;
+ 	margin-top: 0;
+ }
+
+ .error-messages {
+ 	border-left: 10px solid #EA5722;
+ 	padding: 0 0 5px 20px;
+ 	margin-bottom: 20px;
+ }
+
+ form > div + div {
+ 	margin-top: 20px;
+ }
+
+ .field_with_errors label {
+ 	color: #bf3604;
+ 	font-weight: bold;
+ }
+
+ footer {
+  margin-top: 50px;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444444;
+  font-size: 62.5%;
+  text-rendering: optimizeLegibility;
+  background: #fff;
+ }
+
+ footer p {
+ 	margin: 30;
+ }
+
+
