@@ -52,5 +52,8 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
 </table> -->
 
 <br>
-
-<%= link_to 'Adicionar local', new_locale_path, class: 'button' %>
+<% if user_signed_in? %>
+	<%= link_to 'Adicionar local', new_locale_path, class: 'button' %>
+<% else %>
+	<%= link_to 'Adicione um local', new_user_session_path%>
+<% end %>

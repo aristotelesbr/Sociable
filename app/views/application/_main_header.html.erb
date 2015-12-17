@@ -7,7 +7,7 @@
     <% if  user_signed_in? %>
       <ul>
         <li>
-          <%= current_user.email %> |
+          <%= current_user.username %> |
         </li>
         <li>
           <%= button_to  "Sair", destroy_user_session_path, method: :delete  %>
