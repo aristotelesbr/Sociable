@@ -1,31 +1,27 @@
 <header>
   <%= link_to root_path, class: 'logo' do %>
-    <%= image_tag 'logo22.png' %>
+    <%= image_tag 'teste.png' %>
   <% end %>
 
   <nav>
-    <% if 'logged_in?' %>
+    <% if  user_signed_in? %>
       <ul>
         <li>
-          <%= 'Aristoteles coutinho '%>
+          <%= current_user.email %> |
         </li>
-
         <li>
-          <%= 'Sair' %>
+          <%= button_to  "Sair", destroy_user_session_path, method: :delete  %>
         </li>
       </ul>
     <% else %>
       <ul>
         <li>
-          <%= '-- '%>
-        </li>
-
-        <li>
-          <%= 'Entrar' %>
+          <%= link_to "Registrar", new_user_registration_path  %> |
+          <%= link_to "Entrar", new_user_session_path  %>
         </li>
       </ul>
     <% end %>
   </nav>
 
-  <h1><%=' TITULO' %></h1>
+  <h1><%=' Teresina Movel' %></h1>
 </header>

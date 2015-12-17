@@ -103,16 +103,6 @@ html {
  	padding: 0;
  }
 
- .actions {
- 	-webkit-transition: opacity .2s ease-in;
- 	font-size: 14px;
- 	opacity: 0;
- }
-
- .actions a {
- 	color: #cc4b00;
- }
-
  li:hover .actions {
  	opacity: 1;
  }
@@ -133,10 +123,6 @@ html {
  	background: #BE3605;
  }
 
- label {
- 	display: block;
- }
-
  .error-messages li {
  	list-style: disc;
  	margin-left: 25px;
@@ -151,10 +137,6 @@ html {
  	border-left: 10px solid #EA5722;
  	padding: 0 0 5px 20px;
  	margin-bottom: 20px;
- }
-
- form > div + div {
- 	margin-top: 20px;
  }
 
  .field_with_errors label {
@@ -173,8 +155,14 @@ html {
   background: #fff;
  }
 
- footer p {
- 	margin: 30;
- }
+ footer p{
+  margin: 0px 356px ;
+  color: #999;
+}
 
+.footer > .container {
+  border-top: 1px solid #DDD;
+  padding-right: 15px;
+  padding-left: 15px;
+}
 

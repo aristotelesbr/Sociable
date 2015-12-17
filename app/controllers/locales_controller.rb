@@ -1,4 +1,5 @@
 class LocalesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_locale, only: [:show, :edit, :update, :destroy]
 
   # GET /locales
@@ -12,12 +13,12 @@ class LocalesController < ApplicationController
       marker.infowindow locale.title
       if locale.category_id == 1
         marker.picture({
-          url: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|ff9c00|000000",
+          url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
           width:  32,
           height: 32})
       elsif locale.category_id == 2
         marker.picture({
-          url: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|ff9c00|000000",
+          url: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
           width:  32,
           height: 32})        
       end
