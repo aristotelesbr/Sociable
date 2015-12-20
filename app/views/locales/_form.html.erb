@@ -39,10 +39,14 @@
     <%= f.label :zip %><br>
     <%= f.text_field :zip %>
   </div>
-   <div class="field">
-    <%= f.label :status %><br>
-    <%= f.check_box :status %>
-  </div>
+
+  <% if current_user.has_role? :admin %>
+     <div class="field">
+      <%= f.label :status %><br>
+      <%= f.check_box :status %>
+    </div>
+  <%end %>
+
   <div class="field">
     <%= f.label :category_id %><br>
     <%= f.collection_select(:category_id, list,
