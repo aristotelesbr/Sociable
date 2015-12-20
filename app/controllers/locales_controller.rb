@@ -4,7 +4,7 @@ class LocalesController < ApplicationController
   # GET /locales
   # GET /locales.json
   def index
-    @locales = Locale.all
+    @locales = Locale.status
     @categories = Category.all
     @hash = Gmaps4rails.build_markers(@locales) do |locale, marker|
       marker.lat locale.latitude
@@ -88,6 +88,6 @@ class LocalesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def locale_params
       params.require(:locale).permit(:title, :description,
-        :state, :city, :latitude, :longitude, :street, :number, :zip, :category_id)
+        :state, :status, :city, :latitude, :longitude, :street, :number, :zip, :category_id)
     end
 end

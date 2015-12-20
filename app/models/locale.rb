@@ -20,4 +20,6 @@ class Locale < ActiveRecord::Base
   def location
   	[state, city, street, number].compact.join(', ')
   end
+
+  scope :status, -> {where(status: true)}
 end
