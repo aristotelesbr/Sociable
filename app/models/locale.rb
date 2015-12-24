@@ -23,4 +23,12 @@ class Locale < ActiveRecord::Base
   end
 
   scope :status, -> {where(status: true)}
+   
+   around_create :set_status
+   protected
+  
+  # Set a default value for the status
+  def set_status
+     self.status= false
+  end
 end

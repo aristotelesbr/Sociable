@@ -1,0 +1,20 @@
+<h1>Admin#preferences</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th colspan="0"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+   <% @outstanding.each do |i| %>
+      <tr>
+        <td><%=i.title %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+

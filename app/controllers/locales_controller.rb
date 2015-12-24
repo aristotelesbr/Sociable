@@ -43,9 +43,9 @@ class LocalesController < ApplicationController
   # POST /locales.json
   def create
     @locale = Locale.new(locale_params)
-
     respond_to do |format|
       if @locale.save
+        byebug
         format.html { redirect_to @locale, notice: 'Locale was successfully created.' }
         format.json { render :show, status: :created, location: @locale }
       else
@@ -90,4 +90,5 @@ class LocalesController < ApplicationController
       params.require(:locale).permit(:title, :description,
         :state, :status, :city, :latitude, :longitude, :street, :number, :zip, :category_id)
     end
+
 end
