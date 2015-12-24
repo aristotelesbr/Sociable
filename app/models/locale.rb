@@ -22,13 +22,13 @@ class Locale < ActiveRecord::Base
   	[state, city, street, number].compact.join(', ')
   end
 
-  scope :status, -> {where(status: true)}
+  scope :find_status, -> {where(status: true)}
    
-   around_create :set_status
+   after_create :set_status
    protected
   
   # Set a default value for the status
   def set_status
-     self.status= false
+     update(status: false)
   end
 end

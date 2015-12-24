@@ -4,7 +4,7 @@ class LocalesController < ApplicationController
   # GET /locales
   # GET /locales.json
   def index
-    @locales = Locale.status
+    @locales = Locale.find_status
     @categories = Category.all
     @hash = Gmaps4rails.build_markers(@locales) do |locale, marker|
       marker.lat locale.latitude
@@ -45,7 +45,6 @@ class LocalesController < ApplicationController
     @locale = Locale.new(locale_params)
     respond_to do |format|
       if @locale.save
-        byebug
         format.html { redirect_to @locale, notice: 'Locale was successfully created.' }
         format.json { render :show, status: :created, location: @locale }
       else
