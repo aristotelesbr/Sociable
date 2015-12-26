@@ -9,7 +9,7 @@
         <li>
           <%= current_user.username %> |
               <% if current_user.has_role? :admin %>
-                <%= 'admin' %> |
+                <%= link_to 'Admin', admin_preferences_path %> |
               <% end %> 
         </li>
         <li>
