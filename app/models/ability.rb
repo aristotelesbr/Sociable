@@ -6,7 +6,7 @@ class Ability
     if user.has_role? :admin
       can :manage, :all
     else
-      can :read, :all
+      can :read, Locale
     end
     #   user ||= User.new # guest user (not logged in)
     #   if user.admin?

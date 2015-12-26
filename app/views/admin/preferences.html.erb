@@ -10,7 +10,7 @@
   <tbody>
    <% @outstanding.each do |i| %>
       <tr>
-        <td><%=i.title %></td>
+        <td><%=link_to i.title, i %></td>
       </tr>
     <% end %>
   </tbody>

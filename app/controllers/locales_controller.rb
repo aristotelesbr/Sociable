@@ -24,15 +24,19 @@ class LocalesController < ApplicationController
     end
   end    
 
-
   # GET /locales/1
   # GET /locales/1.json
   def show
+    if @locale.user_id == current_user.id or current_user.has_role? :admin
+      @locale
+    else
+      redirect_to root_path, notice: "Você não tem autorização para ver isso"
+    end
   end
 
   # GET /locales/new
   def new
-    @locale = Locale.new
+    @locale = current_user.locales.build
   end
 
   # GET /locales/1/edit
@@ -42,7 +46,7 @@ class LocalesController < ApplicationController
   # POST /locales
   # POST /locales.json
   def create
-    @locale = Locale.new(locale_params)
+    @locale = current_user.locales.build(locale_params)
     respond_to do |format|
       if @locale.save
         format.html { redirect_to @locale, notice: 'Locale was successfully created.' }

@@ -1,6 +1,8 @@
 class Locale < ActiveRecord::Base
   resourcify
   belongs_to :category
+  belongs_to :user
+
   # Validates locale
   validates :title, :description, :state, :street,
     :number, :city, :category_id, presence: true

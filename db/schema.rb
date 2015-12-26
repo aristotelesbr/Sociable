@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151220192904) do
+ActiveRecord::Schema.define(version: 20151226133606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,9 +36,11 @@ ActiveRecord::Schema.define(version: 20151220192904) do
     t.float    "longitude"
     t.string   "city"
     t.boolean  "status"
+    t.integer  "user_id"
   end
 
   add_index "locales", ["category_id"], name: "index_locales_on_category_id", using: :btree
+  add_index "locales", ["user_id"], name: "index_locales_on_user_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -78,4 +80,5 @@ ActiveRecord::Schema.define(version: 20151220192904) do
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
 
   add_foreign_key "locales", "categories"
+  add_foreign_key "locales", "users"
 end
