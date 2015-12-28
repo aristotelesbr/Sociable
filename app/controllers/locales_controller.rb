@@ -1,6 +1,6 @@
 class LocalesController < ApplicationController
   before_action :set_locale, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /locales
   # GET /locales.json
   def index
@@ -93,5 +93,4 @@ class LocalesController < ApplicationController
       params.require(:locale).permit(:title, :description,
         :state, :status, :city, :latitude, :longitude, :street, :number, :zip, :category_id)
     end
-
 end
